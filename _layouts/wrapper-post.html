@@ -1,0 +1,284 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Агенція журналістики даних</title>
+
+    <meta property="og:site_name" content="Агенція журналістики даних"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title"
+          content="{{ page.title }}"/>
+    <meta property="og:image" content=""/>
+    <meta property="og:description"
+          content="{{ page.lead }}"/>
+    <meta property="og:url" content="{{ site.url }}{{ post.url }}"/>
+
+    <!-- Twitter Card Meta Tags -->
+    <!--треба замінити твітер еканут-->
+    <meta name="twitter:site" content=""/>
+    <meta property="twitter:account_id" content="49572937"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:url" content="{{ site.url }}{{ post.url }}"/>
+    <meta name="twitter:title"
+          content="{{ page.title }}"/>
+    <meta name="twitter:description"
+          content="{{ page.lead }}"/>
+    <meta name="twitter:image:src" content=""/>
+    <meta name="twitter:image:width" content="1200"/>
+    <meta name="twitter:image:height" content="630"/>
+
+    <!-- Other Meta Tags -->
+    <meta name="title" content="{{ page.title }}">
+    <meta name="description"
+          content="{{ page.lead }}">
+
+    <!-- Links -->
+    <link href="{{ site.baseurl }}/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{ site.baseurl }}/css/style.css" rel="stylesheet">
+    <link href="{{ site.baseurl }}/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Scripts -->
+    <script src="{{ site.baseurl }}/lib/jquery-2.1.4.min.js"></script>
+    <script src="{{ site.baseurl }}/lib/bootstrap.min.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+<script>
+
+    //заміна мета-інфо для НЕ новин
+    //var content = document.querySelector("meta[property='og:description']").getAttribute("content");
+    //    if(content.length === 0)  {
+    //      console.log("main page");
+    //      $("meta[property='og:description']").attr("content", "Сприяти прозорості влади шляхом розвитку якісної журналістики та журналістики даних, яка передбачає аналіз і подачу у цікавій та зрозумілій формі великі масиви даних. ");
+    //      $("meta[property='og:title']").attr("content", "Агенція журналістики даних");
+    //      $("meta[property='og:image']").attr("content", "/assets/img/projects/1.jpg")
+    //      $("meta[property='og:description']").attr("content", "Сприяти прозорості влади шляхом розвитку якісної журналістики та журналістики даних, яка передбачає аналіз і подачу у цікавій та зрозумілій формі великі масиви даних. ");
+    //      $("meta[property='og:title']").attr("content", "Агенція журналістики даних");
+    //
+    //     }
+    //    else {
+    //        console.log("news");
+    //    }
+
+</script>
+
+<div id="container">
+    <header>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-offset-3 col-md-6">
+                    {% include header.html %}
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <table class="header-table m-t-20 m-b-5">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <a href="{{ site.baseurl }}/">Головна</a>
+                        </td>
+
+                        <td>
+                            <a href="{{ site.baseurl }}/about_us.html">Про нас</a>
+                        </td>
+
+                        <td>
+                            <a href="{{ site.baseurl }}/partners.html">Партнери</a>
+                        </td>
+                        <td>
+                            <a href="{{ site.baseurl }}/analytics.html">Аналітика</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+
+    {{ content }}
+
+    <script>
+
+        $('body').on('click', 'i.project.fa.fa-long-arrow-right', function () {
+
+            $(this).removeClass('fa-long-arrow-right').addClass('fa-long-arrow-left');
+            $('.project_target').removeClass('col-md-4').addClass('col-md-8');
+            $('.news_target').removeClass('col-md-4').addClass('col-md-2');
+            $('.team_target').removeClass('col-md-4').addClass('col-md-2');
+            $('.team').addClass('fa fa-long-arrow-left');
+            $('.team-descript').css("display", "none");
+            $(".post-lead").css("display", "none");
+
+        });
+
+
+        $('body').on('click', 'i.project.fa.fa-long-arrow-left', function () {
+
+            $(this).removeClass('fa-long-arrow-left').addClass('fa-long-arrow-right');
+            $('.project_target').removeClass('col-md-8').addClass('col-md-4');
+            $('.news_target').removeClass('col-md-2').removeClass('col-md-8').addClass('col-md-4');
+            $('.team_target').removeClass('col-md-2').removeClass('col-md-4').addClass('col-md-4');
+            $('.team').removeClass('fa fa-long-arrow-left');
+            $('.team-descript').css("display", "block");
+            $(".post-lead").css("display", "block");
+        });
+
+
+        //news
+        //        $('body').on('click', 'i.news.fa.fa-long-arrow-right', function () {
+        //
+        //            $(this).removeClass('fa-long-arrow-right').addClass('fa-long-arrow-left');
+        //            $('.project_target').removeClass('col-md-8').removeClass('col-md-4').addClass('col-md-4');
+        //            $('.news_target').removeClass('col-md-4').removeClass('col-md-2').addClass('col-md-6');
+        //            $('.team_target').removeClass('col-md-4').addClass('col-md-2');
+        //            $('.team').addClass('fa fa-long-arrow-left');
+        //            $('.team-descript').css("display", "none");
+        //
+        //        });
+        //
+        //
+        //        $('body').on('click', 'i.news.fa.fa-long-arrow-left', function () {
+        //
+        //            $(this).removeClass('fa-long-arrow-left').addClass('fa-long-arrow-right');
+        //            $('.project_target').removeClass('col-md-8').addClass('col-md-4');
+        //            $('.news_target').removeClass('col-md-2').removeClass('col-md-6').addClass('col-md-4');
+        //            $('.team_target').removeClass('col-md-2').removeClass('col-md-4').addClass('col-md-4');
+        //            $('.team').removeClass('fa fa-long-arrow-left');
+        //            $('.team-descript').css("display", "block");
+        //            $(".post-lead").css("display", "block");
+        //
+        //        });
+
+
+
+
+        $('body').on('click', 'img.news.arrow-left', function () {
+
+            $(this).removeClass('arrow-left').addClass('arrow-right').css('transform', "rotate(0deg)");
+            $('.project_target').removeClass('col-md-8').removeClass('col-md-4').addClass('col-md-4');
+            $('.news_target').removeClass('col-md-4').removeClass('col-md-2').addClass('col-md-6');
+            $('.team_target').removeClass('col-md-4').addClass('col-md-2');
+            $('img.team.arrow-left').css('display', 'block');
+            $('.team-descript').css("display", "none");
+
+        });
+
+
+        $('body').on('click', 'img.news.arrow-right', function () {
+
+            $(this).removeClass('arrow-right').addClass('arrow-left').css('transform', "rotate(180deg)");
+            $('.project_target').removeClass('col-md-8').addClass('col-md-4');
+            $('.news_target').removeClass('col-md-2').removeClass('col-md-6').addClass('col-md-4');
+            $('.team_target').removeClass('col-md-2').removeClass('col-md-4').addClass('col-md-4');
+            $('img.team.arrow-left').css('display', 'none');
+            $('.team-descript').css("display", "block");
+            $(".post-lead").css("display", "block");
+
+        });
+
+
+
+        //team
+
+        $('body').on('click', 'img.team.arrow-left', function () {
+
+            $(this).removeClass('fa-long-arrow-left');
+            $('img.team.arrow-left').css('display', 'none');
+            $('img.news.arrow-right').addClass('arrow-left').css('transform', "rotate(180deg)");
+//            $('.fa-long-arrow-left').removeClass('fa-long-arrow-left').addClass('fa-long-arrow-right');
+            $('.project_target').removeClass('col-md-8').removeClass('col-md-4').addClass('col-md-4');
+            $('.news_target').removeClass('col-md-6').removeClass('col-md-2').addClass('col-md-4');
+            $('.team_target').removeClass('col-md-2').removeClass('col-md-4').addClass('col-md-4');
+            $('.team-descript').css("display", "block");
+            $(".post-lead").css("display", "block");
+
+        });
+
+        $('#backimg');
+
+
+        $(document).ready(function() {
+            $('.news.fa').on('click', function(event) {
+                if ($(this).hasClass('fa-long-arrow-left')) {
+                    $(this).parent().attr('title', "Розгорнути");
+                } else {
+                    $(this).parent().attr('title', 'Згорнути');
+                }
+            });
+        });
+
+
+        $(document).ready(function(){
+            $('#hideshow').on('click', function(event) {
+                $('#carousel-example-generic').toggle('show');
+                $('#list').toggle('hide');
+                $(this).toggleClass('fa-list fa-image');
+                if($(this).hasClass('fa-list')){
+                    $(this).attr('title',"подивитись всі проекти");
+//                    $(this).css("border", "0");
+                    $(this).attr("src", "{{ site.baseurl }}/assets/img/list.svg");
+
+                }else{
+                    $(this).attr('title','повернутись до слайдів');
+//                    $(this).css("border", "1.2px solid");
+                    $(this).attr("src", "{{ site.baseurl }}/assets/img/rect.svg");
+
+                }
+            });
+        });
+        //fa-images
+    </script>
+
+
+    <script>
+        jQuery('li').click(function () {
+            jQuery(this).toggleClass('active');
+        });
+    </script>
+
+    <div id="prefooter"></div>
+
+    <footer id="footer" class="m-t-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="foot">Громадська організація «Агенція журналістики даних»</p>
+                    <p class="foot">Електрона пошта: dj.ahentsia@gmail.com</p>
+                    <p class="foot">Телефон: (073) 312-12-55</p>
+                    <!--<a  class="no-hover" href="https://telegram.me/textyorgua"-->
+                    <!--onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">-->
+                    <!--<i style="color:white" class="fa fa-telegram share-button2"></i>-->
+                    <!--</a>-->
+
+                    <!--<a  class="no-hover" href="http://twitter.com/textyorgua"-->
+                    <!--onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">-->
+                    <!--<i style="color:white" class="fa fa-twitter share-button2"></i>-->
+                    <!--</a>-->
+
+                    <!--<a  class="no-hover" href="http://facebook.com/texty.org.ua"-->
+                    <!--onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;">-->
+                    <!--<i style="color:white" class="fa fa-facebook-official share-button2"></i>-->
+                    <!--</a>-->
+                </div>
+
+            </div>
+        </div>
+
+    </footer>
+</div>
+</body>
+</html>
