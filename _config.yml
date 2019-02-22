@@ -16,7 +16,7 @@ pagination:
   enabled: true
 
   # Set to 'true' to enable pagination debugging. This can be enabled in the site config or only for individual pagination pages
-  debug: false
+  debug: true
 
   # The default document collection to paginate if nothing is specified ('posts' is default)
   collection: 'posts'
@@ -67,24 +67,6 @@ pagination:
 
 
 defaults:
-  # Default language
-  -
-    scope:
-      path: ""
-    values:
-      lang: "ukr"
-  # Language for everything inside `/en`
-  -
-    scope:
-      path: "en"
-    values:
-      lang: "en"
-  # Language for English posts
-  -
-    scope:
-      path: "en/_posts"
-      type: "posts" # As of version 2.3.0, Jekyll uses plural keywords for type
-    values:
-      lang: "en"
+ 
     
    

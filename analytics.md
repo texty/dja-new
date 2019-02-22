@@ -1,4 +1,4 @@
 ---
-layout: "analytics"
+layout: analytics
 ---
 

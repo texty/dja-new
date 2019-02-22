@@ -1,5 +1,5 @@
 ---
-layout: wrapper
+layout: wrapper_en
 ---
 
 <div class="container-fluid">
@@ -497,45 +497,17 @@ layout: wrapper
 
                 </div>
 
-                <!--{% for post in paginator.posts %}-->
 
-                <!--<h5 class="highlited"><span>{{ post.heading }}</span></h5>-->
-                <!--<h3><a class="no-hover" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h3>-->
-                <!--<p> {{ post.date | date: "%-d-%m-%Y" }}-->
-                <!--<p>-->
-                <!--<p class="post-lead"> {{ post.lead }} </p>-->
-
-                <!--&lt;!&ndash;social icons&ndash;&gt;-->
-                <!--<div id="share-bar m-b-10">-->
-                    <!--<div class="share-buttons">-->
-                        <!--<a style='text-decoration:none;'-->
-                           <!--type="icon_link"-->
-                           <!--onClick="window.open('http://www.facebook.com/sharer.php?s=100&p[title]={{ post.title }}&p[summary]={{ post.lead }}&p[url]=http://datajournalism.agency/{{ post.url }}&p[images][0]={{ post.image }}',  'sharer', 'toolbar=0,status=0,width=580,height=325');"-->
-                           <!--href="javascript: void(0)" title="Поділитись"><i-->
-                                <!--class="fa fa-facebook-official share-button m-b-70 m-r-3 p-t-5 p-r-10 p-b-5 p-l-10"></i>-->
-                        <!--</a>-->
-
-                        <!--<a href="https://twitter.com/intent/tweet?text=http://datajournalism.agency/{{ post.url }}"-->
-                           <!--onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"-->
-                           <!--title="Поділитись">-->
-                            <!--<i class="fa fa-twitter share-button m-b-70 m-r-3 p-t-5 p-r-10 p-b-5 p-l-10"></i>-->
-                        <!--</a>-->
-                    <!--</div>-->
-                <!--</div>-->
-
-                <!--{% endfor %}-->
-
-
-                <!--&lt;!&ndash; pagination &ndash;&gt;-->
-                <!--{% if paginator.total_pages > 1 %}-->
-                <!--<div class="pagination">-->
-                    <!--{% if paginator.previous_page %}-->
-                    <!--<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo;-->
-                        <!--Попередня</a>-->
-                    <!--{% else %}-->
-                    <!--<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"></a>-->
-                    <!--<span></span>-->
-                    <!--{% endif %}-->
+                <!-- pagination -->
+                {% if paginator.total_pages > 1 %}
+                <div class="pagination">
+                    {% if paginator.previous_page %}
+                    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo;
+                        Попередня</a>
+                    {% else %}
+                    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"></a>
+                    <span></span>
+                    {% endif %}
 
                     <!--{% for page in (1..paginator.total_pages) %}-->
                     <!--{% if page == paginator.page %}-->
@@ -547,13 +519,13 @@ layout: wrapper
                     <!--{% endif %}-->
                     <!--{% endfor %}-->
 
-                    <!--{% if paginator.next_page %}-->
-                    <!--<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Наступна &raquo;</a>-->
-                    <!--{% else %}-->
-                    <!--<span></span>-->
-                    <!--{% endif %}-->
-                <!--</div>-->
-                <!--{% endif %}-->
+                    {% if paginator.next_page %}
+                    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Наступна &raquo;</a>
+                    {% else %}
+                    <span></span>
+                    {% endif %}
+                </div>
+                {% endif %}
 
             </div>
         </div>
