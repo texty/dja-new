@@ -1,5 +1,5 @@
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "localhost:4000/"
+url: "http://datajournalism.agency/"
 
 plugins:
    - jekyll-paginate-v2
