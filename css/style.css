@@ -560,6 +560,9 @@ h5.team-descript-name {
   margin-top: 20px;
   margin-bottom: 20px; }
 
+.dashed-link {
+  border-bottom: 1px dashed black; }
+
 /* ------------------------------------
 ------------- carousel --------------*/
 .carousel-indicators li {
